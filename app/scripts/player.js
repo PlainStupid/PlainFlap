@@ -28,7 +28,7 @@ window.Player = (function() {
     Player.prototype.onFrame = function(delta) {
 
         if (Controls.didJump()) {
-            GRAVITYSPEED = -50;
+            GRAVITYSPEED = -45;
             this.pos.y += delta * GRAVITYSPEED;
         }
         else
@@ -37,10 +37,12 @@ window.Player = (function() {
             this.pos.y += delta * GRAVITYSPEED;
         }
 
+        //if(Controls.)
+
         this.checkCollisionWithBounds();
 
         // Update UI
-        this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+        this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
     };
 
     Player.prototype.checkCollisionWithBounds = function() {
