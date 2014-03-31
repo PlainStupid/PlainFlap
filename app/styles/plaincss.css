@@ -14,6 +14,14 @@ width: 70px;
 height: 600px;
 background: green;
 }
+.Pipe2 {
+position: absolute;
+top: 0;
+left: 0;
+width: 70px;
+height: 600px;
+background: green;
+}
 .ground {
     position: absolute;
     left: 0;

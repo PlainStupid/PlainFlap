@@ -12,6 +12,7 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.pipe = new window.Pipe(this.el.find('.Pipe'), this);
+		this.pipe2 = new window.Pipe2(this.el.find('.Pipe2'), this);
 
 		this.isPlaying = false;
 
@@ -37,6 +38,7 @@ window.Game = (function() {
 		// Update game entities.
 		this.player.onFrame(delta);
 		this.pipe.onFrame();
+		this.pipe2.onFrame();
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
@@ -60,6 +62,7 @@ window.Game = (function() {
 	Game.prototype.reset = function() {
 		this.player.reset();
 		this.pipe.reset();
+		this.pipe2.reset();
 	};
 
 	/**
