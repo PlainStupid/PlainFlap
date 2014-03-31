@@ -2,6 +2,7 @@ window.Player = (function() {
     'use strict';
 
     var Controls = window.Controls;
+    //var Pipe = window.Pipe;
 
     // All these constants are in em's, multiply by 10 pixels
     // for 1024x576px canvas.
