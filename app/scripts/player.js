@@ -6,7 +6,7 @@ window.Player = (function() {
 
     // All these constants are in em's, multiply by 10 pixels
     // for 1024x576px canvas.
-    var HEIGHT = 5;
+    var HEIGHT = 20;
     var GRAVITYSPEED = 1;
     var INITIAL_POSITION_X = 30;
     var INITIAL_POSITION_Y = 25;

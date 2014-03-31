@@ -27,7 +27,7 @@ window.Pipe = (function() {
 			COUNT = 0;
 		}
 
-		if(this.pos.x <= 0)
+		if(this.pos.x <= -20)
 		{
 			this.pos.x = INITIALX_POS;
 		}
