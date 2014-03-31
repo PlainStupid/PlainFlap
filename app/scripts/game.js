@@ -2,7 +2,7 @@
 window.Game = (function() {
 	'use strict';
 
-	var audio = new Audio('../sound/flappyLucky.mp3');
+	
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.
@@ -19,7 +19,10 @@ window.Game = (function() {
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
 	};
-
+	function mute(){
+		var audioElm = document.getElementById('sound');
+		audioElm.muted = !audioElm.muted;
+	}
 	/**
 	 * Runs every frame. Calculates a delta and allows each game
 	 * entity to update itself.
@@ -49,7 +52,6 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
-		audio.play();
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);

@@ -21,7 +21,7 @@
     </head>
     <body>
 
-        <audio autoplay loop>
+        <audio autoplay loop id="sound">
             <source src="../audio/flappyLucky.ogg" type="audio/ogg">
             <source src="../audio/flappyLucky.mp3" type="audio/mpeg">
         </audio>
@@ -30,6 +30,7 @@
         <![endif]-->
 
         <div class="GameCanvas">
+            <button class="FlappyLucky" id="lucky"onclick="audioElm = document.getElementById('sound'); audioElm.muted = !audioElm.muted;">Mute Music</button>
             <div class="Player"></div>
             <div class="Pipe"></div>
             <div class="Pipe2"></div>
