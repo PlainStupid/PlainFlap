@@ -19,10 +19,7 @@ window.Game = (function() {
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
 	};
-	function mute(){
-		var audioElm = document.getElementById('sound');
-		audioElm.muted = !audioElm.muted;
-	}
+
 	/**
 	 * Runs every frame. Calculates a delta and allows each game
 	 * entity to update itself.

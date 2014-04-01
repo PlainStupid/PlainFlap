@@ -1,6 +1,6 @@
 window.Player = (function() {
     'use strict';
-
+    var Pipe = window.Pipe;
     var Controls = window.Controls;
     //var Pipe = window.Pipe;
 
@@ -9,7 +9,7 @@ window.Player = (function() {
     var HEIGHT = 20;
     var GRAVITYSPEED = 1;
     var INITIAL_POSITION_X = 30;
-    var INITIAL_POSITION_Y = 25;
+    var INITIAL_POSITION_Y = 10;
 
     var Player = function(el, game) {
         this.el = el;
@@ -29,12 +29,13 @@ window.Player = (function() {
     Player.prototype.onFrame = function(delta) {
 
         if (Controls.didJump()) {
-            GRAVITYSPEED = -45;
+            GRAVITYSPEED = -35;
             this.pos.y += delta * GRAVITYSPEED;
+            document.getElementById('bird').play();
         }
         else
         {
-            GRAVITYSPEED += 2;
+            GRAVITYSPEED += 3;
             this.pos.y += delta * GRAVITYSPEED;
         }
 
