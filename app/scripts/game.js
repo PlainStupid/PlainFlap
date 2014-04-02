@@ -2,7 +2,7 @@
 window.Game = (function() {
 	'use strict';
 
-	
+
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.
@@ -13,6 +13,7 @@ window.Game = (function() {
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.pipe = new window.Pipe(this.el.find('.Pipe'), this);
 		this.pipe2 = new window.Pipe2(this.el.find('.Pipe2'), this);
+        //this.ground = new window.Ground(this.el.find('.Ground'), this);
 
 		this.isPlaying = false;
 
@@ -39,6 +40,7 @@ window.Game = (function() {
 		this.player.onFrame(delta);
 		this.pipe.onFrame();
 		this.pipe2.onFrame();
+        //this.ground.onFrame();
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
@@ -62,6 +64,7 @@ window.Game = (function() {
 		this.player.reset();
 		this.pipe.reset();
 		this.pipe2.reset();
+        //this.ground.reset();
 	};
 
 	/**

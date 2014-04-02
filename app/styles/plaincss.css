@@ -1,3 +1,20 @@
+@-webkit-keyframes groundloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -20em 0px; }
+}
+@-moz-keyframes groundloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -20em 0px; }
+}
+@-o-keyframes groundloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -20em 0px; }
+}
+@keyframes groundloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -20em 0px; }
+}
+
 .FlappyLucky
 {
 position:relative;
@@ -27,6 +44,16 @@ width: 110px;
 height: 130px;
 background: url('../images/daniel.png') 100% 100%;
 }
+
+.Player-jump {
+position: absolute;
+top: 0;
+left: 0;
+width: 110px;
+height: 130px;
+background: url('../images/daniel_open.png') 100% 100%;
+}
+
 .Pipe {
 position: absolute;
 top: 0;
@@ -43,13 +70,16 @@ width: 70px;
 height: 600px;
 background: green;
 }
-.ground {
+.Ground {
     position: absolute;
     left: 0;
-    top: 50em;
+    bottom: 0;
     background: url('../images/ground.png');
-    width: 110%;
-    height: 20%;
+    width: 100%;
+    height: 15%;
+
+    -webkit-animation: groundloop 3900ms linear infinite;
+   animation: groundloop 3900ms linear infinite;
 }
 .Scoreboard {
 position: absolute;
