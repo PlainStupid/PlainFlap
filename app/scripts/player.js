@@ -33,11 +33,13 @@ window.Player = (function() {
             this.pos.y += delta * GRAVITYSPEED;
             if(OPEN == true)
             {
-                document.getElementById('Dabs').style.backgroundImage='url(../images/daniel.png)';
+                //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel.png)';
+                this.el.toggleClass('jump', false);
                 OPEN = false;
             }else
             {
-                document.getElementById('Dabs').style.backgroundImage='url(../images/daniel_open.png)';
+                //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel_open.png)';
+                this.el.toggleClass('jump', true);
                 OPEN = true;
             }
             document.getElementById('bird').play();
