@@ -1,6 +1,6 @@
 window.Player = (function() {
     'use strict';
-    var Pipe = window.Pipe;
+    //var Pipe = window.Pipe;
     var Controls = window.Controls;
     //var Pipe = window.Pipe;
 
@@ -10,7 +10,7 @@ window.Player = (function() {
     var GRAVITYSPEED = 1;
     var INITIAL_POSITION_X = 30;
     var INITIAL_POSITION_Y = 10;
-
+    var OPEN = false;
     var Player = function(el, game) {
         this.el = el;
         this.game = game;
@@ -31,10 +31,20 @@ window.Player = (function() {
         if (Controls.didJump()) {
             GRAVITYSPEED = -50;
             this.pos.y += delta * GRAVITYSPEED;
+            if(OPEN == true)
+            {
+                document.getElementById('Dabs').style.backgroundImage='url(../images/daniel.png)';
+                OPEN = false;
+            }else
+            {
+                document.getElementById('Dabs').style.backgroundImage='url(../images/daniel_open.png)';
+                OPEN = true;
+            }
             document.getElementById('bird').play();
         }
         else
         {
+            //document.getElementById('Dabs').style.backgroundImage="url(../images/daniel.png)";
             GRAVITYSPEED += 3;
             this.pos.y += delta * GRAVITYSPEED;
         }

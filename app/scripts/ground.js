@@ -19,7 +19,7 @@ window.Ground = (function() {
     Ground.prototype.onFrame = function() {
         this.pos.x -= 1;
 
-        if(this.pos.x <= -20)
+        if(this.pos.x <= -100)
         {
             this.pos.x = INITIALX_POS;
         }
