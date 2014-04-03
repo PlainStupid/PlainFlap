@@ -4,6 +4,7 @@ window.Game = (function() {
 
 	var score = 0;
     var scorecount = 0;
+    var begin = true;
 
 	/**
 	 * Main game class.
@@ -32,7 +33,27 @@ window.Game = (function() {
 		if (!this.isPlaying) {
 			return;
 		}
+		scorecount += 1;
 
+        if(begin === true)
+        {
+            if(scorecount === 70)
+            {
+                document.getElementById('score').innerHTML = score;
+                score += 1;
+                scorecount = 0;
+				begin = false;
+            }
+        }
+        else
+        {
+            if(scorecount === 100)
+            {
+                document.getElementById('score').innerHTML = score;
+                score += 1;
+                scorecount = 0;
+            }
+        }
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
@@ -58,6 +79,7 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+		begin = true;
 	};
 
 	/**
@@ -70,6 +92,7 @@ window.Game = (function() {
 		this.player.reset();
 		this.pipe.reset();
 		this.pipe2.reset();
+		begin = true;
         //this.ground.reset();
 	};
 
