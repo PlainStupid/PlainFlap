@@ -231,7 +231,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    src: ['{,*/}*.{gif,jpeg,jpg,png}',
+                            'images{/,*/}*.*'],
                     dest: '<%= config.dist %>/images'
                 }]
             }
@@ -308,7 +309,9 @@ module.exports = function(grunt) {
                         '.htaccess',
                         'images/{,*/}*.webp',
                         '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'audio{/,*/}*.*',
+                        'images{/,*/}*.*'
                     ]
                 }]
             },
@@ -331,7 +334,7 @@ module.exports = function(grunt) {
             ],
             dist: [
                 'copy:styles',
-                //'imagemin',
+
                 'svgmin'
             ]
         }
@@ -367,8 +370,7 @@ module.exports = function(grunt) {
         }
 
         grunt.task.run([
-            'connect:test',
-            'mocha'
+            'connect:test'
         ]);
     });
 
@@ -376,12 +378,13 @@ module.exports = function(grunt) {
         'clean:dist',
         'useminPrepare',
         'concurrent:dist',
+        'imagemin',
         'autoprefixer',
         'concat',
         'cssmin',
         'uglify',
         'copy:dist',
-        'rev',
+        //'rev',
         'usemin',
         'htmlmin'
     ]);

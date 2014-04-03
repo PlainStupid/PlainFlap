@@ -1,9 +1,8 @@
 window.Player = (function() {
     'use strict';
-    //var Pipe = window.Pipe;
+
     var Controls = window.Controls;
-    var is_touch_device = 'ontouchstart' in document.documentElement;
-    //var Pipe = window.Pipe;
+    //var is_touch_device = 'ontouchstart' in document.documentElement;
 
     // All these constants are in em's, multiply by 10 pixels
     // for 1024x576px canvas.
@@ -11,13 +10,16 @@ window.Player = (function() {
     var GRAVITYSPEED = 1;
     var INITIAL_POSITION_X = 30;
     var INITIAL_POSITION_Y = 10;
-    var OPEN = false;
+    //var OPEN = false;
 
 
     var Player = function(el, game) {
         this.el = el;
         this.game = game;
-        this.pos = { x: 0, y: 0 };
+        this.pos = {
+            x: 0,
+            y: 0
+        };
     };
 
     /**
@@ -37,21 +39,8 @@ window.Player = (function() {
             GRAVITYSPEED = -50;
             this.pos.y += delta * GRAVITYSPEED;
             this.el.toggleClass('jump', true);
-            if(OPEN === true)
-            {
-                //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel.png)';
-
-                OPEN = false;
-            }else
-            {
-                //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel_open.png)';
-
-                OPEN = true;
-            }
             document.getElementById('bird').play();
-        }
-        else
-        {
+        } else {
             //document.getElementById('Dabs').style.backgroundImage="url(../images/daniel.png)";
             this.el.toggleClass('jump', false);
             GRAVITYSPEED += 3;
@@ -61,7 +50,7 @@ window.Player = (function() {
         //if(Controls.)
 
         this.checkCollisionWithBounds();
-        this.checkCollisionWithPipes();
+        //this.checkCollisionWithPipes();
 
         // Update UI
         this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
@@ -77,9 +66,6 @@ window.Player = (function() {
         }
     };
 
-    Player.prototype.checkCollisionWithPipes = function() {
-        if(x)
-    };
     return Player;
 
 })();

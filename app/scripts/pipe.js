@@ -16,7 +16,7 @@ window.Pipe = (function() {
     };
 
     Pipe.prototype.onFrame = function() {
-		
+
         if(COUNT <= SPEED)
 		{
 			COUNT++;

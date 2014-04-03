@@ -102,6 +102,7 @@ window.Game = (function() {
         this.isPlaying = false;
         document.getElementById('sound').volume = 0.3;
         document.getElementById('fail').play();
+
         // Should be refactored into a Scoreboard class.
         var that = this;
         this.el.find('.Ground').css('-webkit-animation-play-state', 'paused');
