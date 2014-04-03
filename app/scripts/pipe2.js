@@ -3,7 +3,6 @@ window.Pipe2 = (function() {
 
     var INITIAL_FIRSTX_POS = 163.6;
     var INITIALX_POS = 102.4;
-    var INITIALY_POS = 0;
     var SPEED = 0;
     var COUNT = 0;
 
@@ -14,7 +13,7 @@ window.Pipe2 = (function() {
     };
     Pipe2.prototype.reset = function() {
         this.pos.x = INITIAL_FIRSTX_POS;
-        this.pos.y = INITIALY_POS;
+        this.pos.y = -1 * (Math.floor(Math.random() * (93 - 75 + 1)) + 75);
         this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
     };
 
@@ -34,6 +33,7 @@ window.Pipe2 = (function() {
 		if(this.pos.x <= -20)
 		{
 			this.pos.x = INITIALX_POS;
+            this.pos.y = -1 * (Math.floor(Math.random() * (93 - 75 + 1)) + 75);
 		}
 
 		// Update UI

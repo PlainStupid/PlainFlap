@@ -2,6 +2,7 @@ window.Player = (function() {
     'use strict';
     //var Pipe = window.Pipe;
     var Controls = window.Controls;
+    var is_touch_device = 'ontouchstart' in document.documentElement;
     //var Pipe = window.Pipe;
 
     // All these constants are in em's, multiply by 10 pixels
