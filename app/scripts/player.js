@@ -61,6 +61,7 @@ window.Player = (function() {
         //if(Controls.)
 
         this.checkCollisionWithBounds();
+        this.checkCollisionWithPipes();
 
         // Update UI
         this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
@@ -76,6 +77,9 @@ window.Player = (function() {
         }
     };
 
+    Player.prototype.checkCollisionWithPipes = function() {
+        if(x)
+    };
     return Player;
 
 })();
