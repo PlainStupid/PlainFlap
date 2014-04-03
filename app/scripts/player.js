@@ -67,9 +67,6 @@ window.Player = (function() {
 
     Player.prototype.checkCollisionWithBounds = function() {
         if (this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-            this.el.css('transform', 'rotate(30deg)');
-            this.el.css('-ms-transform','rotate(30deg)');
-            this.el.css('-webkit-transform','rotate(30deg)');
             return this.game.gameover();
         }
         if (this.pos.y <= 0) {
