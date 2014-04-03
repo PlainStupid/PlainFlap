@@ -1,18 +1,18 @@
 @-webkit-keyframes groundloop {
    0% { background-position: 0px 0px; }
-   100% { background-position: -20em 0px; }
+   100% { background-position: -118em 0px; }
 }
 @-moz-keyframes groundloop {
    0% { background-position: 0px 0px; }
-   100% { background-position: -20em 0px; }
+   100% { background-position: -118em 0px; }
 }
 @-o-keyframes groundloop {
    0% { background-position: 0px 0px; }
-   100% { background-position: -20em 0px; }
+   100% { background-position: -118em 0px; }
 }
 @keyframes groundloop {
    0% { background-position: 0px 0px; }
-   100% { background-position: -20em 0px; }
+   100% { background-position: -118em 0px; }
 }
 
 .FlappyLucky
@@ -90,7 +90,8 @@ background: green;
     height: 15%;
 
     -webkit-animation: groundloop 3900ms linear infinite;
-   animation: groundloop 3900ms linear infinite;
+    animation: groundloop 3900ms linear infinite;
+
 }
 .Scoreboard {
 position: absolute;
