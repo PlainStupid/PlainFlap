@@ -11,6 +11,8 @@ window.Player = (function() {
     var INITIAL_POSITION_X = 30;
     var INITIAL_POSITION_Y = 10;
     var OPEN = false;
+
+
     var Player = function(el, game) {
         this.el = el;
         this.game = game;
@@ -27,11 +29,13 @@ window.Player = (function() {
     };
 
     Player.prototype.onFrame = function(delta) {
+        
+
 
         if (Controls.didJump()) {
             GRAVITYSPEED = -50;
             this.pos.y += delta * GRAVITYSPEED;
-            if(OPEN == true)
+            if(OPEN === true)
             {
                 //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel.png)';
                 this.el.toggleClass('jump', false);

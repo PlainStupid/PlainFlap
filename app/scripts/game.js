@@ -2,6 +2,8 @@
 window.Game = (function() {
 	'use strict';
 
+	var score = 0;
+    var scorecount = 0;
 
 	/**
 	 * Main game class.
@@ -30,6 +32,7 @@ window.Game = (function() {
 		if (!this.isPlaying) {
 			return;
 		}
+
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
@@ -61,6 +64,9 @@ window.Game = (function() {
 	 * Resets the state of the game so a new game can be started.
 	 */
 	Game.prototype.reset = function() {
+		scorecount = 0;
+        score = 0;
+        document.getElementById('score').innerHTML = score;
 		this.player.reset();
 		this.pipe.reset();
 		this.pipe2.reset();
