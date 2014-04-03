@@ -29,21 +29,22 @@ window.Player = (function() {
     };
 
     Player.prototype.onFrame = function(delta) {
-        
+
 
 
         if (Controls.didJump()) {
             GRAVITYSPEED = -50;
             this.pos.y += delta * GRAVITYSPEED;
+            this.el.toggleClass('jump', true);
             if(OPEN === true)
             {
                 //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel.png)';
-                this.el.toggleClass('jump', false);
+
                 OPEN = false;
             }else
             {
                 //document.getElementById('Dabs').style.backgroundImage='url(../images/daniel_open.png)';
-                this.el.toggleClass('jump', true);
+
                 OPEN = true;
             }
             document.getElementById('bird').play();
@@ -51,6 +52,7 @@ window.Player = (function() {
         else
         {
             //document.getElementById('Dabs').style.backgroundImage="url(../images/daniel.png)";
+            this.el.toggleClass('jump', false);
             GRAVITYSPEED += 3;
             this.pos.y += delta * GRAVITYSPEED;
         }
