@@ -84,14 +84,14 @@ window.Game = (function() {
     Game.prototype.reset = function() {
         scorecount = 0;
         score = 0;
-        setVolume(1);
+        document.getElementById('sound').volume = 1;
         document.getElementById('score').innerHTML = score;
         document.getElementById('score').style.visibility = 'visible';
         this.player.reset();
         this.pipe.reset();
         this.pipe2.reset();
         begin = true;
-        this.el.find('.Ground').css('-webkit-animation-play-state', "running");
+        this.el.find('.Ground').css('-webkit-animation-play-state', 'running');
 
     };
 
@@ -100,11 +100,11 @@ window.Game = (function() {
      */
     Game.prototype.gameover = function() {
         this.isPlaying = false;
-        setVolume(0.3);
+        document.getElementById('sound').volume = 0.3;
         document.getElementById('fail').play();
         // Should be refactored into a Scoreboard class.
         var that = this;
-        this.el.find('.Ground').css("-webkit-animation-play-state", "paused");
+        this.el.find('.Ground').css('-webkit-animation-play-state', 'paused');
         var scoreboardEl = this.el.find('.Scoreboard');
         document.getElementById('MyScoreboard').innerHTML = 'Score: ' + score;
         document.getElementById('score').style.visibility = 'hidden';
@@ -125,8 +125,3 @@ window.Game = (function() {
 
     return Game;
 })();
-
-
-function setVolume(vol) {
-    document.getElementById("sound").volume = vol;
-}
