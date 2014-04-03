@@ -45,7 +45,14 @@ height: 100px;
 background: url('../images/daniel-sprite2.png');
 background-position: 0 0;
 }
-
+#score
+{
+position:relative;
+z-index:1000;
+left:50%;
+font-size: 50pt;
+color:white;
+}
 .Player.jump {
 background-position: 0 -120px;
 }
