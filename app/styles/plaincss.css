@@ -53,6 +53,14 @@ left:50%;
 font-size: 50pt;
 color:white;
 }
+#MyScoreboard
+{
+position:relative;
+z-index:1000;
+top:25%;
+font-size: 50pt;
+color:white;
+}
 .Player.jump {
 background-position: 0 -120px;
 }
@@ -92,7 +100,7 @@ height: 30em;
 width: 40em;
 margin-left: -20em;
 box-sizing: border-box;
-background: purple;
+background: #A34353;
 text-align: center;
 -webkit-transform: translateZ(0) translate(0, -40em);
 -webkit-transition: -webkit-transform 0.5s;
@@ -104,9 +112,9 @@ text-align: center;
 -webkit-transform: none;
 }
 .Scoreboard-restart {
-margin-top: 20em;
+margin-top: 15em;
 font-size: inherit;
-padding: 0.4em 1.5em;
+padding: 0.0em 0.5em;
 border: 0.2em solid white;
 background: none;
 cursor: pointer;

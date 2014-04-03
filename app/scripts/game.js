@@ -37,20 +37,20 @@ window.Game = (function() {
 
         if(begin === true)
         {
-            if(scorecount === 70)
+            if(scorecount === 150)
             {
+            	score += 1;
                 document.getElementById('score').innerHTML = score;
-                score += 1;
                 scorecount = 0;
 				begin = false;
             }
         }
         else
         {
-            if(scorecount === 100)
+            if(scorecount === 123)
             {
+            	score += 1;
                 document.getElementById('score').innerHTML = score;
-                score += 1;
                 scorecount = 0;
             }
         }
@@ -89,6 +89,7 @@ window.Game = (function() {
 		scorecount = 0;
         score = 0;
         document.getElementById('score').innerHTML = score;
+        document.getElementById('score').style.visibility = 'visible';
 		this.player.reset();
 		this.pipe.reset();
 		this.pipe2.reset();
@@ -105,6 +106,8 @@ window.Game = (function() {
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
+		document.getElementById('MyScoreboard').innerHTML = 'Score: ' + score;
+		document.getElementById('score').style.visibility = 'hidden';
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
