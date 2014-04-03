@@ -1,3 +1,21 @@
+@-webkit-keyframes worldloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -90.9em 0px; }
+}
+@-moz-keyframes worldloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -90.9em 0px; }
+}
+@-o-keyframes worldloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -90.9em 0px; }
+}
+@keyframes worldloop {
+   0% { background-position: 0px 0px; }
+   100% { background-position: -90.9em 0px; }
+}
+
+
 @-webkit-keyframes groundloop {
    0% { background-position: 0px 0px; }
    100% { background-position: -118em 0px; }
@@ -47,7 +65,8 @@ background-position: 0 0;
 }
 #score
 {
-position:relative;
+position:absolute;
+background: transparent;
 z-index:1000;
 left:50%;
 font-size: 50pt;
@@ -95,6 +114,7 @@ background: green;
 }
 .Scoreboard {
 position: absolute;
+
 left: 50%;
 top: 10em;
 height: 30em;
@@ -134,6 +154,7 @@ background: ‪#‎ccc‬;
 color: #000;
 padding: 0.2em 0;
 }
+
 .GameCanvas {
 font-size: 10px;
 position: absolute;
@@ -144,5 +165,8 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: url('../images/background.png');
+background: url('../images/background.png') repeat-x;
+
+     -webkit-animation: worldloop 15s linear infinite;
+   animation: worldloop 15s linear infinite;
 }

@@ -5,6 +5,7 @@ window.Game = (function() {
     var scorecount = 0;
     var begin = true;
 
+
     /**
      * Main game class.
      * @param {Element} el jQuery element containing the game.
@@ -15,9 +16,10 @@ window.Game = (function() {
         this.player = new window.Player(this.el.find('.Player'), this);
         this.pipe = new window.Pipe(this.el.find('.Pipe'), this);
         this.pipe2 = new window.Pipe2(this.el.find('.Pipe2'), this);
-        //this.ground = new window.Ground(this.el.find('.Ground'), this);
+        this.Canvas = this.el.find('.Sky');
 
         this.isPlaying = false;
+        this.skyPos = 0;
 
         // Cache a bound onFrame since we need it each frame.
         this.onFrame = this.onFrame.bind(this);
@@ -54,11 +56,11 @@ window.Game = (function() {
             delta = now - this.lastFrame;
         this.lastFrame = now;
 
+
         // Update game entities.
         this.player.onFrame(delta);
         this.pipe.onFrame();
         this.pipe2.onFrame();
-        //this.ground.onFrame();
 
         // Request next frame.
         window.requestAnimationFrame(this.onFrame);

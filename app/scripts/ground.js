@@ -2,8 +2,8 @@ window.Ground = (function() {
     'use strict';
     var INITIALX_POS = 0;
     var INITIALY_POS = 50;
-    var SPEED = 1;
-    var COUNT = 0;
+    //var SPEED = 1;
+    //var COUNT = 0;
 
     var Ground = function(el, game) {
         this.el = el;
